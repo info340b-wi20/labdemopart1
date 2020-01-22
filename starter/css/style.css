@@ -1,9 +1,85 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* base sizings */
+.nav-link {
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 25px;
+    margin-right: 0.5em;
+}
+
+.box {
+    width: 90%;
+    margin: 1em auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-img-top {
+    border-top-left-radius: calc(.25em - 1px);
+    border-top-right-radius: calc(.25em - 1px);
+}
+
+.card-subtitle {
+
+}
+
+.select-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    border: 5px solid red;
+}
+
+.green {
+    border: 5px solid green;
+}
 
 @media (min-width: 768px) {
 
     /* add some responsiveness */
+    .box {
+        width: 400px;
+    }
 
 }

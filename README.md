@@ -1,7 +1,7 @@
 # Fandom Finder Demo
 
 ## Instructions
-Use the starter code in `starter` to build out Fandom Finder stage 1!
+Use the starter code in `starter` to build out Fandom Finder for the current stage! All the past stages will be included in the respective folders.
 
 ## Results
 

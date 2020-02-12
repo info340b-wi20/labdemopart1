@@ -70,6 +70,10 @@ h4 {
     justify-content: center;
 }
 
+.circle:hover {
+    cursor: pointer;
+}
+
 .red {
     border: 5px solid red;
 }

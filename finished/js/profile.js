@@ -55,6 +55,7 @@ function chooseOrPass(which) {
         let message = document.querySelector("#message");
         message.textContent = "No more profiles!";
         message.style.display = "block";
+        console.log(state.chosen);
     }
 }
 

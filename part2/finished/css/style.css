@@ -132,10 +132,6 @@ h4 {
     margin-bottom: 0;
 }
 
-#profile {
-    display: none;
-}
-
 @media (min-width: 768px) {
 
     .box {

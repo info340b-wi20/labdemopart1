@@ -10,63 +10,25 @@
 </head>
 
 <body>
-    <nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="nav-link nav-brand" href="/">
-                <img src="/img/logo.png" class="logo">
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand nav-link">
+                <img class="logo" src="img/logo.png">
                 Fandom Finder
             </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <a class="nav-link" href="/">Home</a>
-                    <a class="nav-link" href="/index2.html">Chats</a>
-                    <a class="nav-link" href="/index3.html">Profile</a>
-                </ul>
-            </div>
+            <ul>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/index2.html" class="nav-link">Chats</a>
+                <a href="/index3.html" class="nav-link">Profile</a>
+            </ul>
         </nav>
-    </nav>
+    </header>
     <main>
         <h1>Chats</h1>
-        <!-- Chat area -->
-        <div class="box">
-            <ul class="chat-box list-group" id="chat">
-                <li class="chat list-group-item">
-                    <div>
-                        <img class="chat-pic" src="img/tony.JPG" alt="Charlie">
-                    </div>
-                    <div class="chat-content">
-                        <h4>Charlie </h4>
-                        <div>
-                            <strong>You:</strong> Your suit looks so great!
-                        </div>
-                    </div>
-                </li>
-                <li class="chat list-group-item">
-                    <div><img class="chat-pic" src="img/legolas.JPG" alt="Kevin"></div>
-                    <div class="chat-content">
-                        <h4>Kevin <span class="unread"></span></h4>
-                        <div> Thanks dude!</div>
-                    </div>
-                </li>
-                <li class="chat list-group-item">
-                    <div><img class="chat-pic" src="img/widow.jfif" alt="Emma"></div>
-                    <div class="chat-content">
-                        <h4>Emma <span class="unread"></span></h4>
-                        <div> Wow that's really impresssive!</div>
-                    </div>
-                </li>
-                <li class="chat list-group-item">
-                    <div><img class="chat-pic" src="img/naruto.JPG" alt="Naruto"></div>
-                    <div class="chat-content">
-                        <h4>Naruto </h4>
-                        <div><strong>You:</strong> You look great!</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <div class="box" id="chat"></div>
     </main>
     <footer>
-        <address class="center">
+        <address>
             2020 &copy; FF
         </address>
     </footer>

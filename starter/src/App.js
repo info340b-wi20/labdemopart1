@@ -19,7 +19,9 @@ class App extends Component {
   }
 
   updatePage = (newPage) => {
-    // update page!
+    this.setState({
+      page: newPage
+    });
   }
 
   render() {

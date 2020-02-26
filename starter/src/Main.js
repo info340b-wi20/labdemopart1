@@ -29,8 +29,13 @@ export default class Main extends Component {
             });
     }
 
-    addPersonToChat = (chat) => {
+    addPersonToChat = (person) => {
         // add person!
+        let newChats = this.state.chats;
+        newChats.push(person);
+        this.setState({
+            chats: newChats 
+        });
     }
 
     render() {

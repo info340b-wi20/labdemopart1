@@ -9,6 +9,22 @@ class People extends Component {
 
     next = (choose) => {
         // move to next person!
+        if (choose) {
+            let selectedIndex = this.state.selectedIndex;
+            let people = this.props.people;
+            let selectedPerson = people[selectedIndex];
+            let person = {
+                name: selectedPerson.name,
+                pic: selectedPerson.pic,
+                unread: false,
+                from: false,
+                lastMessage: "Send a message to get to know them!"
+            };
+            this.props.addCallback(person);
+        }
+        this.setState({
+            selectedIndex: this.state.selectedIndex + 1
+        });
     }
 
     render() {

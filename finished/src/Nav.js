@@ -22,7 +22,7 @@ export default class Nav extends Component {
             return <div className={`nav-link nav-divs ${(this.props.page === page.link) && " active"}`} role="button" key={page.name} onClick={() => this.props.pageCallback(page.link)}>{page.name}</div>
         });
         return (
-            <Navbar expand="lg" color="light" light>
+            <Navbar expand="md" color="light" light>
                 <div className="nav-link nav-divs" onClick={() => this.props.pageCallback("people")}>
                     <img src="/img/logo.png" className="logo" alt="Fandom Finder logo" />
                     Fandom Finder

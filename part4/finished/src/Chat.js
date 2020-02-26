@@ -4,9 +4,9 @@ export default class Chats extends Component {
 
     render() {
         let chats = this.props.chats;
-        let renderedChats = chats.map((chat, i) => {
+        let renderedChats = chats.map((chat) => {
             return (
-                <li key={chat.name + " " + i} className="chat list-group-item">
+                <li key={chat.name} className="chat list-group-item">
                     <div><img className="chat-pic" src={chat.pic} alt={chat.name} /></div>
                     <div className="chat-content">
                         <h4>{chat.name} {chat.unread && <span className="unread"></span>}</h4>

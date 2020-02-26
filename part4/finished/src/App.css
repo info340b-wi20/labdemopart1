@@ -17,14 +17,6 @@ h4 {
     margin: 1em auto;
 }
 
-.nav-divs:hover {
-    cursor: pointer;
-}
-
-main {
-    margin: 1em;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,10 +27,6 @@ main {
     display: flex!important;
     align-items: center;
     justify-content: left;
-}
-
-.chat:hover {
-    background-color: whitesmoke;
 }
 
 .chat-box {

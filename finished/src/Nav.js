@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
+import { Navbar } from 'reactstrap';
 
 export default class Nav extends Component {
 
     render() {
+        let pages = [
+            {
+                name: "Home",
+                link: "people"
+            },
+            {
+                name: "Chats",
+                link: "chats"
+            },
+            {
+                name: "Profile",
+                link: "profile"
+            }
+        ];
+        let renderedLinks = pages.map((page) => {
+            return <div className={`nav-link nav-divs ${(this.props.page === page.link) && " active"}`} role="button" key={page.name} onClick={() => this.props.pageCallback(page.link)}>{page.name}</div>
+        });
         return (
-            <nav>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="nav-link nav-brand" href="/">
-                        <img src="/img/logo.png" className="logo" />
-                        Fandom Finder
-                    </a>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <a className="nav-link" href="#">Home</a>
-                            <a className="nav-link" href="#">Chats</a>
-                            <a className="nav-link" href="#">Profile</a>
-                        </ul>
+            <Navbar expand="lg" color="light" light>
+                <div className="nav-link nav-divs" onClick={() => this.props.pageCallback("people")}>
+                    <img src="/img/logo.png" className="logo" alt="Fandom Finder logo" />
+                    Fandom Finder
                     </div>
-                </nav>
-            </nav>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        {renderedLinks}
+                    </ul>
+                </div>
+                <div>
+                    Hi, {this.props.name}!
+                </div>
+            </Navbar>
         );
     }
 

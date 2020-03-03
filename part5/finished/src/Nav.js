@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'reactstrap';
-import firebase from 'firebase/app';
+import { Navbar } from 'reactstrap';
 
 export default class Nav extends Component {
 
@@ -20,7 +19,9 @@ export default class Nav extends Component {
             }
         ];
         let renderedLinks = pages.map((page) => {
-            return <div className={`nav-link nav-divs ${(this.props.page === page.link) && " active"}`} role="button" key={page.name} onClick={() => this.props.pageCallback(page.link)}>{page.name}</div>
+            return <div className={`nav-link nav-divs ${(this.props.page === page.link) && " active"}`} role="button" key={page.name} onClick={() => {
+                this.props.pageCallback(page.link);
+            }}>{page.name}</div>
         });
         return (
             <Navbar expand="md" color="light" light>
@@ -33,17 +34,9 @@ export default class Nav extends Component {
                         {renderedLinks}
                     </ul>
                 </div>
-                {this.props.user &&
-                    <div className="d-flex align-items-center">
-                        <div className="mr-2 ">
-                            Hi, {this.props.user.displayName}!
-                        </div>
-                        <div>
-                            {/* signOut here! */}
-                            <Button onClick={() => {}}>Sign out</Button>
-                        </div>
-                    </div>
-                }
+                <div>
+                    Hi, {this.props.name}!
+                </div>
             </Navbar>
         );
     }

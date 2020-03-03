@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar } from 'reactstrap';
+import { Navbar, Button } from 'reactstrap';
+import firebase from 'firebase/app';
 
 export default class Nav extends Component {
 
@@ -32,9 +33,16 @@ export default class Nav extends Component {
                         {renderedLinks}
                     </ul>
                 </div>
-                <div>
-                    Hi, {this.props.name}!
-                </div>
+                {this.props.user &&
+                    <div className="d-flex align-items-center">
+                        <div className="mr-2 ">
+                            Hi, {this.props.user.displayName}!
+                        </div>
+                        <div>
+                            <Button onClick={() => firebase.auth().signOut()}>Sign out</Button>
+                        </div>
+                    </div>
+                }
             </Navbar>
         );
     }

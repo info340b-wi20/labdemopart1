@@ -8,23 +8,22 @@ class People extends Component {
     }
 
     next = (choose) => {
-        let selectedIndex = this.state.selectedIndex;
-        let people = this.props.people;
-        let person = people[selectedIndex];
+        // move to next person!
         if (choose) {
-            this.props.addCallback({
-                name: person.name,
-                pic: person.pic,
-                from: false,
+            let selectedIndex = this.state.selectedIndex;
+            let people = this.props.people;
+            let selectedPerson = people[selectedIndex];
+            let person = {
+                name: selectedPerson.name,
+                pic: selectedPerson.pic,
                 unread: false,
-                lastMessage: ""
-            });
-        }
-        this.setState((currState) => {
-            return {
-                ...currState,
-                selectedIndex: currState.selectedIndex + 1
+                from: false,
+                lastMessage: "Send a message to get to know them!"
             };
+            this.props.addCallback(person);
+        }
+        this.setState({
+            selectedIndex: this.state.selectedIndex + 1
         });
     }
 

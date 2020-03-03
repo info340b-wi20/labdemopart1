@@ -29,12 +29,11 @@ export default class Main extends Component {
             });
     }
 
-    addPersonToChat = (person) => {
-        // add person!
-        let newChats = this.state.chats;
-        newChats.push(person);
+    addPersonToChat = (chat) => {
+        let chats = this.state.chats;
+        chats.push(chat);
         this.setState({
-            chats: newChats 
+            chats: chats
         });
     }
 
@@ -46,7 +45,7 @@ export default class Main extends Component {
         } else if (this.props.page === "chats") {
             content = <Chats chats={this.state.chats} />;
         } else {
-            content = <Profile user={this.props.user} />
+            content = <Profile user={this.props.user} userData={this.props.userData} />
         }
 
         return (

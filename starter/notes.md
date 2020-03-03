@@ -1,0 +1,5 @@
+- Create project on firebase
+- Enable database and auth (set up sign in for Google)
+- Import Firebase react UI for a simple sign in solution [Link](https://github.com/firebase/firebaseui-web-react)
+- Set up Auth event
+- Set up profile page

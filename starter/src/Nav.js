@@ -40,7 +40,7 @@ export default class Nav extends Component {
                         </div>
                         <div>
                             {/* signOut here! */}
-                            <Button onClick={() => {}}>Sign out</Button>
+                            <Button onClick={() => firebase.auth().signOut()}>Sign out</Button>
                         </div>
                     </div>
                 }

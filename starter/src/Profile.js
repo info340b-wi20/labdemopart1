@@ -8,7 +8,8 @@ class Profile extends Component {
         profession: "",
         age: 0,
         bio: "",
-        interests: ""
+        interests: "",
+        isUpdate: false
     }
 
     handleChange = (event) => {
@@ -23,10 +24,27 @@ class Profile extends Component {
         let profileInfo = {
             bio: bio,
             age: age,
-            interests: interests.split(","),
+            interests: interests.split(",").map((interest) => interest.trim()).filter((interest) => interest !== ""),
             profession: profession
         }
-        // update your profile in firebase!
+        let dbRef = firebase.database().ref("/users").child(this.props.user.uid);
+        dbRef.set(profileInfo)
+        .then(() => {
+            this.setState({
+                isUpdate: false
+            })
+        });
+    }
+
+    toEditMode = () => {
+        let { age, profession, bio, interests } = this.props.userData;
+        this.setState({ 
+            isUpdate: true,
+            age: age,
+            profession: profession,
+            bio: bio,
+            interests: interests.join(", ")
+        })
     }
 
     render() {
@@ -40,8 +58,9 @@ class Profile extends Component {
                         className="card-img-top" />
                         <div className="card-body">
                             <div className="card-title">{user.displayName} {userData && userData.age}</div>
-                            {userData ?
+                            {(userData && !this.state.isUpdate) ?
                                 <div>
+                                    <Button onClick={this.toEditMode} style={{ margin: "1em" }}>Update</Button>
                                     <div className="card-subtitle">{userData.profession}</div>
                                     <p className="card-text">{userData.bio}</p>
                                     <div>
@@ -73,7 +92,7 @@ class Profile extends Component {
                                             <Label for="interest">Interests</Label>
                                             <Input type="text" name="interests" value={this.state.interests} onChange={this.handleChange} id="interests" placeholder="Enter your interests with a comma separating them" />
                                         </FormGroup>
-                                        <Button onClick={this.handleSubmit}>Submit</Button>
+                                        <Button onClick={this.handleSubmit}>{this.state.isUpdate ? "Update" : "Submit"}</Button>
                                     </Form>
                                 </div>
                             }
